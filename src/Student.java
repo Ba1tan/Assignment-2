@@ -32,8 +32,23 @@ public class Student extends Person
         return "Student";
     }
     @Override
+    public int compareTo(Person nextPerson) {
+        if(this.getPaymentAmount() == nextPerson.getPaymentAmount())
+        {
+            return 0;
+        }
+        else if (this.getPaymentAmount() < nextPerson.getPaymentAmount()) {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    @Override
     public String toString()
     {
-        return "Student: " + getId() + '\n' +  super.toString();
+        return '\n' +  super.toString();
     }
+
 }

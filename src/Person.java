@@ -1,4 +1,4 @@
-public abstract class Person implements Payable
+public abstract class Person implements Payable, Comparable<Person>
 {
     private int id;
     private static int id_gen = 1;
@@ -15,8 +15,6 @@ public abstract class Person implements Payable
         setFirstName(firstName);
         setSecondName(secondName);
     }
-
-
     public int getId() {
         return id;
     }
@@ -39,10 +37,11 @@ public abstract class Person implements Payable
     @Override
     public abstract double getPaymentAmount();
 
+
     public abstract String getPosition();
     public String toString()
     {
-        return "Name: " + getFirstName() + '\n' + "Surname: " + getSecondName() + '\n' + "Earns " + getPaymentAmount() + " tenge";
+        return getPosition() + " " + getId() + ':' + " " + '\n' + "Name: " + getFirstName() + '\n' + "Surname: " + getSecondName() + '\n' + "Earns " + getPaymentAmount() + " tenge";
     }
 
 }
