@@ -34,9 +34,21 @@ public abstract class Person implements Payable, Comparable<Person>
     public String getSecondName() {
         return secondName;
     }
-    @Override
-    public abstract double getPaymentAmount();
 
+    public int compareTo(Person nextPerson) {
+        if (this.getPaymentAmount() == nextPerson.getPaymentAmount())
+        {
+            return 0;
+        }
+        else if (this.getPaymentAmount() < nextPerson.getPaymentAmount())
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 
     public abstract String getPosition();
     public String toString()

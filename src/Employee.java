@@ -30,20 +30,7 @@ public class Employee extends Person
     public double getSalary() {
         return salary;
     }
-    @Override
-    public int compareTo(Person nextPerson) {
-        if(this.getPaymentAmount() == nextPerson.getPaymentAmount())
-        {
-            return 0;
-        }
-        else if (this.getPaymentAmount() < nextPerson.getPaymentAmount()) {
-            return -1;
-        }
-        else
-        {
-            return 1;
-        }
-    }
+
     public String toString()
     {
         return '\n' + super.toString();
